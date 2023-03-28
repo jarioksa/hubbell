@@ -1,2 +1,4 @@
+v1.2 circumvents some R quirks in restoring graphical par and rectifies
+lazy T/F into TRUE/FALSE.  
 v1.1 adds `landgame': build a metacommunity from scratch
 

@@ -17,7 +17,7 @@
 landgame(land, D, m, theta)
 makeland(nrow, ncol, J)
 mutate(genes)
-\method{plot}{landscape}(x, ...)
+\method{plot}{landscape}(x,main, ...)
 }
 
 \arguments{
@@ -31,6 +31,7 @@ mutate(genes)
     Metacommunity.}
   \item{J}{Size of each local community.}
   \item{genes}{Genes defining the species, as a hexidecimal RGB colour.}
+  \item{main}{Main title for the plot.}
   \item{...}{Other parameters to the function.}
 }
 \details{
