@@ -55,12 +55,12 @@ mutate(genes)
     probability \eqn{\nu} derived from the Ultimate Diversity
     \eqn{\theta} and Metacommunity size \eqn{J_M}: \eqn{\nu =
       \theta/(2J_M)}.  Species are identified by RGB colours, and
-    function \code{mutate} changes one of these colour into random
+    function \code{mutate} changes one of the RGB components into a random
     value, without checking whether the value really changed from the
     old one, or whether this species already exists. 
   }
 
-  Function \code{plot} does not plot the original species, or the species
+  Function \code{plot} does not plot the Original Species, or the species
   with identity \code{#FFFFFF}, and other species are displayed by their
   colour.  For better visibility, it may be better to use grey
   background (see \code{bg} in \code{\link{par}}); grey species are late
@@ -95,10 +95,12 @@ mutate(genes)
 \examples{
 land <- makeland(21, 21, 16)
 land
+op <- par(bg="gray")
 plot(land)
 for (t in 1:20) land <- landgame(land, D=4, m=0.2, theta=14)
 land
 plot(land)
+par(op)
 }
 \keyword{ models }
 

@@ -1,7 +1,7 @@
 "plot.hubbell" <-
 function (x, sp.max = 64, ...) 
 {
-    op <- par("mfrow")
+    op <- par(no.readonly=TRUE)
     palette(rainbow(sp.max))
     layout(matrix(c(1, 1, 2, 1, 1, 2), 2, 3, byrow = TRUE))
     dim <- ceiling(sqrt(length(x)))
@@ -14,6 +14,7 @@ function (x, sp.max = 64, ...)
          ylab = "Abundance", xlim = c(1, sp.max),
          ylim = c(1, length(x)), ...)
     points(1:length(rad), rad, col = names(rad), pch=16, ...)
-    par(mfrow=op)
+    par(ylog=op$ylog)
+    par(op)
     invisible()
 }
