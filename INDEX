@@ -1,0 +1,10 @@
+E.S                     Functions for estimating Hubbell's theta from
+                        species -- area curve 
+brokenstick             Generates a brokenstick community 
+carabid                 Pitfall data on Carabids (Siilinjärvi, Finland) 
+hubbell                 Plays a Hubbell game. 
+hubbell.build           Simulates a community from Hubbell's species
+                        generator. 
+landgame                Build a Metacommunity from scratch. 
+rad.lines               Ranked Abundance -- Dominance plots and fits
+                        RAD models 
