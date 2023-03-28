@@ -21,8 +21,9 @@ function(x, sticks=10, main=NULL, legend.add=TRUE, ...)
   x.glm <- lm(log(x) ~ r)
   lines(r, exp(fitted(x.glm)), col="red", lwd=2)
   points(r, x, pch="+")
-  if (legend.add) legend(0.6*n, 0.95*max(x),
-                         c("Brokensticks","Pre-emption","Log-Norm moment","Log-Norm ML"),
-                         col=c("green","red","blue","black"), lwd=c(1,2,2,2), lty=1)
+  if (legend.add)
+      legend(0.6*n, 0.95*max(x),
+             c("Brokensticks","Pre-emption","Log-Norm moment","Log-Norm ML"),
+             col=c("green","red","blue","black"), lwd=c(1,2,2,2), lty=1)
   invisible(list(rank=r, abund=x, logn.fit=l.fit, preemp.fit=exp(fitted(x.glm))))
 }

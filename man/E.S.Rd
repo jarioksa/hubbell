@@ -109,7 +109,7 @@ lines(J[i], E.S(coef(sparea.w), J[i]), col="red", lwd=2)
 ## trace iteration, so that you believe someting is happening
 ##
 sparea.om <- nls(S ~ E.Somega(theta,omega,J), start=list(theta=4, omega=0),
-   control=nls.control(maxiter=500), trace=T)
+   control=nls.control(maxiter=500), trace=1)
 sparea.om
 lines(J[i], fitted(sparea.om)[i], lwd=2)
 ##
