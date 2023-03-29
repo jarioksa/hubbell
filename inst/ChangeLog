@@ -1,8 +1,17 @@
 Package 'hubbell' -*- change log -*-
 
-$Date: 2008-06-10 13:38:07 +0300 (Tue, 10 Jun 2008) $
+$Date: 2011-08-26 11:41:51 +0300 (Fri, 26 Aug 2011) $
 
-Versin 1.6-0
+Version 1.7-0
+	* NAMESPACE: added.
+Version 1.6-2
+	* added as.matrix.landscape() to change a landgame() result to a
+	community data frame.
+Version 1.6-1
+	* carabid.Rd: fixes to pass R-devel (2.9.0-tobe) Rd parser 2
+	checks. 
+	
+Version 1.6-0
 	* moved to R-Forge project sedar. The local svn log is in
 	hubbell_svn.log file.
 	
