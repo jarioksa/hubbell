@@ -6,7 +6,7 @@ Description: An educational package to accompany Hubbell's
   "Unified Neutral Theory" book.  Mainly used for illustrating
   lectures, but some functions have spatial connotations.
 Suggests: vegan
-Maintainer: Jari Oksanen <jari.oksanen@oulu.fi>
+Maintainer: Jari Oksanen <jhoksane@gmail.com>
 License: MIT + file LICENCE
 Encoding: UTF-8
 RoxygenNote: 7.2.3
