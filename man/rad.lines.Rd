@@ -23,7 +23,7 @@ rad.lines(x, sticks=10, main=NULL, legend.add=TRUE, ...)
   vertical axis and corresponding rank on horizontal axis.  It is
   possible to identify some species--abundance models in these plots.
   If species have a simple pre-empting hierarchy, plots should be
-  linear.  In most other models, such as \code{\link{brokenstick}},
+  linear.  In most other models, such as \code{\link{rbstick}},
   Preston's log-Normal or in Hubbell's ``zero-sum multinomial'' model
   the pattern of points should be more or less sigmoid.
 
@@ -49,8 +49,8 @@ rad.lines(x, sticks=10, main=NULL, legend.add=TRUE, ...)
 \note{ Still preliminary. }
 
  
-\seealso{ \code{\link{brokenstick}} for generating brokenstick community,
-  \code{\link{hubbell.build}} for Hubbell's RAD model, \code{\link{qnorm}}
+\seealso{ \code{\link{rbstick}} for generating brokenstick community,
+  \code{\link{rhubbell}} for Hubbell's RAD model, \code{\link{qnorm}}
     for Normal quantiles.}
 
   \examples{
@@ -59,7 +59,7 @@ data(carabid)
 take <- sample(1:nrow(carabid), 1)
 rad.lines(carabid[take,])
 ## Would we recognize a brokenstick community if we found one?
-comm <- brokenstick(30)
+comm <- rbstick(30)
 rad.lines(comm) 
 }
 
