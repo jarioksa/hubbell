@@ -1,5 +1,6 @@
 ### Changes 'landgame' result to a community data frame where each
 ### site is a row, and each distinct species is a column
+#' @export
 as.matrix.landscape <-
     function(x, ...)
 {

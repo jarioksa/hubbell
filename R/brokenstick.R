@@ -1,3 +1,4 @@
+#' @export
 "brokenstick" <-
 function(n)
 {

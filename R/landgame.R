@@ -1,3 +1,5 @@
+#' @importFrom stats rbinom
+#' @export
 "landgame" <-
 function(land, D, m, theta)
 {
@@ -9,7 +11,7 @@ function(land, D, m, theta)
   nu <- theta/2/JM
                                         # Shuffle: prepare to kill first D
   for (i in 1:Nx)
-    for (j in 1:Ny) 
+    for (j in 1:Ny)
       land[i,j,] <- land[i,j,sample(J)]
                                         # Recolonize first D slots
   for (i in 1:Nx)

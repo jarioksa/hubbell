@@ -1,3 +1,5 @@
+#' @importFrom stats runif
+#' @export
 "rbstick" <-
     function(n)
 {

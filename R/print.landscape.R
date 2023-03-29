@@ -1,3 +1,4 @@
+#' @export
 "print.landscape" <-
   function(x, ...)
 {

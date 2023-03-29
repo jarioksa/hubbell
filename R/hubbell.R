@@ -1,3 +1,5 @@
+#' @importFrom stats runif
+#' @export
 "hubbell" <-
 function(comm, D, m=0, P=NULL)
 {

@@ -1,3 +1,6 @@
+#' @importFrom graphics plot lines points legend
+#' @importFrom stats sd qnorm nlm lm fitted ppoints
+#' @export
 "rad.lines" <-
 function(x, sticks=10, main=NULL, legend.add=TRUE, ...)
 {
@@ -9,7 +12,7 @@ function(x, sticks=10, main=NULL, legend.add=TRUE, ...)
   x <- rev(sort(x))
   tot <- sum(x)
   plot(r, x, log="y", type="n", xlab="Rank", ylab="Abundance", main=main, ...)
-  for (i in 1:sticks) {lines(r, tot*brokenstick(n), col="green")} 
+  for (i in 1:sticks) {lines(r, tot*brokenstick(n), col="green")}
   l.m <- mean(log(x))
   l.sd <- sd(log(x))
   l.norm <- qnorm(ppoints(n))

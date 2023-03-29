@@ -1,5 +1,6 @@
+#' @export
 "E.Somega" <-
-function (theta, omega, J) 
+function (theta, omega, J)
 {
   sol <- J
   iJ <- order(J)

@@ -1,5 +1,6 @@
+#' @export
 "print.hubbell" <-
-function (x, ...) 
+function (x, ...)
 {
   print(table(x), ...)
   invisible(x)

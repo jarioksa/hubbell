@@ -1,5 +1,6 @@
+#' @export
 "hubbell.build" <-
-function(theta, J) 
+function(theta, J)
 {
   community <- NULL
   for (j in 0:(J-1)) {
@@ -10,5 +11,5 @@ function(theta, J)
       community[species] <- community[species]+1
     }
   }
-  return(community)   
+  return(community)
 }

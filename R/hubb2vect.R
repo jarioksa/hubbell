@@ -1,3 +1,4 @@
+#' @export
 "hubb2vect" <-
 function(vec)
 {

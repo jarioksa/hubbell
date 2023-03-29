@@ -1,3 +1,5 @@
+#' @importFrom grDevices rgb
+#' @export
 "makeland" <-
 function(nrow, ncol=nrow, J)
 {

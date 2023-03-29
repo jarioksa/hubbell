@@ -1,3 +1,4 @@
+#' @importFrom stats qnorm ppoints
 "logn.fun" <-
 function(x, lmean, lsd)
 {

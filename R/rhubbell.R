@@ -1,5 +1,6 @@
+#' @export
 "rhubbell" <-
-function(theta, J) 
+function(theta, J)
 {
   community <- NULL
   for (j in 0:(J-1)) {

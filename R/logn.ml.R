@@ -1,3 +1,4 @@
+#' @importFrom stats dpois
 "logn.ml" <-
 function(p,x)
 {

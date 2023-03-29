@@ -1,3 +1,6 @@
+#' @importFrom grDevices col2rgb
+#' @importFrom stats runif
+#' @export
 "mutate" <-
 function(genes)
 {
