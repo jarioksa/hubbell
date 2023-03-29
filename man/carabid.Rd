@@ -1,7 +1,8 @@
+\encoding{UTF-8}
 \name{carabid}
 \alias{carabid}
-\non_function{}
-\title{Pitfall data on Carabids (Siilinj‰rvi, Finland) }
+\docType{data}
+\title{Pitfall data on Carabids (Siilinj√§rvi, Finland) }
 \usage{data(carabid)}
 \description{
 The \code{carabid} data frame has 64 rows representing sampling sites

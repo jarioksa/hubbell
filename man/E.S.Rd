@@ -35,20 +35,20 @@ wtheta.fun(S, J, theta)
   The expected species richness in Hubbell's model is approximately
   \eqn{S = 1 + \theta \cdot \ln (1 + \frac{J_M - 1}{\theta})}{S = 1 + \theta
     ln(1 + (J-1)/theta)}.  However, function \code{E.S} does not use this
-    approximation but exact result from Hubbell's species generator (see
-    \code{\link{hubbell.build}}).  Function \code{Var.S} similarly gives
-    the exact estimator of variance of expected species number from
-    Hubbell's species generator.  Function \code{E.Somega} uses the
-    species generator with isolation parameter \eqn{\omega \geq 0}{omega
-      >= 0} for a local community; no variance estimator is available.
-
-    Function \code{wtheta.fun} combines \code{E.S} and \code{Var.S} for
-    variance weighted least squares fitting.  It returns the
-    standardized residuals, or prediction errors divided by the standard
-    error. 
+  approximation but exact result from Hubbell's species generator (see
+  \code{\link{rhubbell}}).  Function \code{Var.S} similarly gives
+  the exact estimator of variance of expected species number from
+  Hubbell's species generator.  Function \code{E.Somega} uses the
+  species generator with isolation parameter \eqn{\omega \geq 0}{omega
+    >= 0} for a local community; no variance estimator is available.
+  
+  Function \code{wtheta.fun} combines \code{E.S} and \code{Var.S} for
+  variance weighted least squares fitting.  It returns the
+  standardized residuals, or prediction errors divided by the standard
+  error. 
 
   These functions together can be used for non-linear least squares
-  regression with \code{\link[nls]{nls}}.
+  regression with \code{\link{nls}}.
 
 }
 \value{
@@ -89,7 +89,6 @@ plot(J, S)
 ##
 ## Non-linear least squares
 ##
-library(nls)
 sparea <- nls(S ~ E.S(theta,J), start=list(theta=10))
 sparea
 i <- order(J)  ## Order on x axis for nice lines

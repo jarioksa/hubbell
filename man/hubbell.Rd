@@ -33,7 +33,7 @@ hubb2vect(vec)
   by the remaining species in the local community, or if \code{m}
   \eqn{> 0}, they may be replaced by the surrounding metacommunity.
   Metacommunity frequencies \code{P} must be given by the user -- a
-  Hubbellian way is to use \code{\link{hubbell.build}}.
+  Hubbellian way is to use \code{\link{rhubbell}}.
 
   The community \code{comm} is an object of class \code{hubbell}.  This
   is simply a vector giving the species id. number for each individual
@@ -53,7 +53,7 @@ hubb2vect(vec)
 }
 \author{ Jari Oksanen }
 
-\seealso{ \code{\link{rad.lines}} for alternative visualization and
+\seealso{ \code{\link[vegan]{radfit}} for alternative visualization and
   analysis.  }
 
 \examples{
@@ -69,7 +69,7 @@ plot(comm, sp.max=30)
 for (t in 1:100) comm <- hubbell(comm, D=240)
 plot(comm, sp.max=30)
 ## Make a Hubbell metacommunity, and start immigration
-metacomm <- hubbell.build(20, 16000)
+metacomm <- rhubbell(20, 16000)
 for (t in 1:100) comm <- hubbell(comm, D=240, m=0.1, P=metacomm)
 comm  ## More species now
 plot(comm)
