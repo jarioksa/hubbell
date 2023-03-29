@@ -1,7 +1,8 @@
 ## exports
 
 export(E.Somega, E.S, Var.S, hubb2vect, hubbell, landgame, makeland,
-mutate, rbstick, rhubbell, wtheta.fun)
+       mutate, rbstick, rhubbell, wtheta.fun, brokenstick, rad.lines,
+       hubbell.build)
 
 ## import
 
