@@ -62,7 +62,7 @@ rad.lines(carabid[take,])
 comm <- brokenstick(30)
 rad.lines(comm) 
 }
-}
+
 \keyword{ hplot }% at least one, from doc/KEYWORDS
 \keyword{ models }
 

@@ -1,7 +1,6 @@
 Package: hubbell
 Title: Functions for Hubbell's Grand Unified Theory
 Version: 1.7-0
-Date: March 24, 2012
 Author: Jari Oksanen
 Description: An educational package to accompany Hubbell's 
   "Unified Neutral Theory" book.  Mainly used for illustrating
@@ -9,5 +8,4 @@ Description: An educational package to accompany Hubbell's
 Suggests: vegan
 Maintainer: Jari Oksanen <jari.oksanen@oulu.fi>
 License: GPL-2
-URL: http://cc.oulu.fi/~jarioksa/
 

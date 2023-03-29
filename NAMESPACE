@@ -5,10 +5,11 @@ export(E.Somega, E.S, Var.S, hubb2vect, hubbell, landgame, makeland,
        hubbell.build)
 
 ## import
-
-importFrom(graphics, plot)
-
-## S3 methods
+importFrom("grDevices", "col2rgb", "palette", "rainbow", "rgb")
+importFrom("graphics", "box", "layout", "legend", "lines", "mtext",
+           "par", "points", "plot")
+importFrom("stats", "dpois", "fitted", "lm", "nlm", "ppoints", "qnorm",
+           "rbinom", "runif", "sd")
 
 S3method(as.matrix, landscape)
 S3method(plot, hubbell)
