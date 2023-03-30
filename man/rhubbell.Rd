@@ -14,14 +14,15 @@ rhubbell(theta, J)
   \item{J}{Size of generated community. }
 }
 \details{
-  Hubbell's species generator \eqn{P = \theta/(\theta + j -1)} gives the
-  probability that \eqn{j}th collected individual belongs to a new
-  species.  If, by chance,
-  this happens, a new species is added to the community with abundance
-  1.  If the \eqn{j}th individual belongs to an old species, abundance 1 is
-  added to some of the old species.  The probability of getting this new
-  indivdiual is proportional to species abundances in community at the
-  moment. 
+
+  Hubbell's species generator \eqn{P = \theta/(\theta + j -1)} gives
+  the probability that \eqn{j}th collected individual belongs to a new
+  species.  If, by chance, this happens, a new species is added to the
+  community with abundance 1.  If the \eqn{j}th individual belongs to
+  an old species, abundance 1 is added to some of the old species.
+  The probability of getting this new individual is proportional to
+  species abundances in communities at the moment.
+
 }
 \value{
   Returns a non-ranked vector of species abundances (integers).
@@ -31,16 +32,17 @@ rhubbell(theta, J)
   Biogeography.  Princeton Univ. Press.
 }
 \author{ Jari Oksanen }
-\note{ The \R code is crystal clear -- at least much clearer than
-  Hubbell's description (p. 290--291, incomprehensible spaghetti diagram
-  in Fig. 9.1).  Use the force, read the source.
+\note{
+  Hubbell's description (p. 290--291, Fig. 9.1) is actually identical
+  to Chinese Restaurant process with well-known properties.
 }
-
-
 \seealso{
+
   \code{\link[vegan]{radfit}} for displaying results,
   \code{\link{rbstick}} for an alternative model (but giving very
-  similar results).
+  similar results). Function \code{\link{E.S}} gives the expected
+  number of species for given community size in analytic form.
+
 }
 
 \examples{
