@@ -29,8 +29,9 @@ function(x, main, ...)
             }
         }
     rad <- rev(sort(table(as.vector(land))))
-    plot(1:length(rad), rad, log="y", type="l", xlab="Rank", ylab="Abundance")
-    points(1:length(rad), rad, col=names(rad), pch=16)
+    plot(seq_along(rad), as.vector(rad), log="y", type="S", xlab="Rank",
+         ylab="Abundance")
+    points(seq_along(rad), rad, col=names(rad), pch=16)
     par(ylog=op$ylog)
     par(op)
     invisible()
