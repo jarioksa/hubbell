@@ -88,12 +88,7 @@ mutate(genes)
   avoid edge effects and whole landscape can be inspected without buffer
   zone.
 
-  The function is slow for large problems. For instance, Hubbell
-  analysed a landscape of 101 \eqn{\times} 101 local communities, each
-  with \eqn{J=16} and run 100,000 time steps.  With my crummy, old
-  laptop (i586, 233MHz) this would take 19 days with isolated
-  communities (\eqn{m=0.005)} and 38 days with open communities
-  (\eqn{m=0.5}). 
+  The function is slow for large problems.
 }
 
 
