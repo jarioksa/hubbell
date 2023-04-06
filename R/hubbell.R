@@ -1,7 +1,7 @@
 #' @importFrom stats runif
 #' @export
-"hubbell" <-
-function(comm, D, m=0, P=NULL)
+`hubbell` <-
+    function(comm, D, m=0, P=NULL)
 {
     J <- length(comm)
     wipe <- sample(J, D, replace=FALSE)
@@ -15,7 +15,8 @@ function(comm, D, m=0, P=NULL)
     aliens <- sum(invade)
     if (aliens > 0)
         comm[wipe[invade]] <- sample(length(P), aliens, replace=TRUE, prob=P)
-    comm[wipe[!invade]] <- sample(max(tmp.ind), D-aliens, replace=TRUE, prob=probs)
+    comm[wipe[!invade]] <- sample(max(tmp.ind), D-aliens, replace=TRUE,
+                                  prob=probs)
     class(comm) <- "hubbell"
-  comm
+    comm
 }

@@ -1,9 +1,9 @@
 #' @importFrom grDevices rgb
 #' @export
-"makeland" <-
-function(nrow, ncol=nrow, J)
+`makeland` <-
+    function(nrow, ncol=nrow, J)
 {
-  land <- array(rgb(1,1,1), dim=c(nrow,ncol,J))
-  class(land) <- "landscape"
-  land
+    land <- array(rgb(1,1,1), dim=c(nrow,ncol,J))
+    class(land) <- "landscape"
+    land
 }

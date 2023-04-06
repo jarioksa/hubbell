@@ -1,6 +1,6 @@
 #' @importFrom stats runif
 #' @export
-"rbstick" <-
+`rbstick` <-
     function(n)
 {
     stick <- runif(n-1)

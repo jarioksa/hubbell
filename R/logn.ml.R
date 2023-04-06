@@ -1,6 +1,6 @@
 #' @importFrom stats dpois
-"logn.ml" <-
-function(p,x)
+`logn.ml` <-
+    function(p,x)
 {
-  -sum(dpois(x, logn.fun(x, p[1], p[2]), log=TRUE))
+    -sum(dpois(x, logn.fun(x, p[1], p[2]), log=TRUE))
 }

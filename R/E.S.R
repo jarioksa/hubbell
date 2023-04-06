@@ -1,3 +1,4 @@
 #' @export
-"E.S" <-
-function(theta, J) theta*(digamma(theta+J) - digamma(theta))
+`E.S` <-
+    function(theta, J)
+        theta*(digamma(theta+J) - digamma(theta))

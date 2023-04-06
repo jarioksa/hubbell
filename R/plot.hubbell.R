@@ -1,8 +1,8 @@
 #' @importFrom graphics par plot box points layout
 #' @importFrom grDevices palette rainbow
 #' @export
-"plot.hubbell" <-
-function (x, sp.max = 64, ...)
+`plot.hubbell` <-
+    function (x, sp.max = 64, ...)
 {
     op <- par(no.readonly=TRUE)
     on.exit(par(op))

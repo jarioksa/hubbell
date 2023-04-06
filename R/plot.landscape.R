@@ -1,7 +1,7 @@
 #' @importFrom graphics par plot mtext box points layout
 #' @export
-"plot.landscape" <-
-function(x, main, ...)
+`plot.landscape` <-
+    function(x, main, ...)
 {
     land <- x
     op <- par(no.readonly = TRUE)

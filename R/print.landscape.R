@@ -1,7 +1,7 @@
 #' @export
-"print.landscape" <-
-  function(x, ...)
+`print.landscape` <-
+    function(x, ...)
 {
-  print(table(as.vector(x)))
-  invisible(x)
+    print(table(as.vector(x)))
+    invisible(x)
 }

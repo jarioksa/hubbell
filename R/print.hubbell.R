@@ -1,7 +1,7 @@
 #' @export
-"print.hubbell" <-
-function (x, ...)
+`print.hubbell` <-
+    function (x, ...)
 {
-  print(table(x), ...)
-  invisible(x)
+    print(table(x), ...)
+    invisible(x)
 }
