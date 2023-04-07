@@ -19,18 +19,18 @@
             ## Consider immigration
             imm <- rbinom(1, D, m)
             if (imm) {
-                pool <- NULL
-                for (step in c(-1,1)) {
-                    i.step <- i - step
-                    if (i.step < 1) i.step <- Nx
-                    if (i.step > Nx) i.step <- 1
-                    pool <- c(pool, land[(D+1):J, i.step, j])
-                    j.step <- j - step
-                    if (j.step < 1) j.step <- Ny
-                    if (j.step > Ny) j.step <- 1
-                    pool <- c(pool, land[(D+1):J, i, j.step])
+                for (jim in seq_len(imm)) {
+                    ## select plant for yet unknown plot (first D dead)
+                    iplant <- sample(J - D, 1) + D
+                    ## select neighbour plot with torus wrap-around
+                    land[jim, i, j] <-
+                        switch(sample(4, 1),
+                               land[iplant, i,  (j - 2) %% Ny + 1],
+                               land[iplant, i %% Nx + 1, j],
+                               land[iplant, i, j %% Ny + 1],
+                               land[iplant, (i - 2) %% Nx + 1, j]
+                           )
                 }
-                land[1:imm, i,j] <- sample(pool, imm, replace=TRUE)
             }
             ## Fill the rest from the local community
             if (imm < D)
