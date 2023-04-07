@@ -14,21 +14,25 @@
         for (i in 1:Nx)
             land[,i,j] <- land[sample(J), i, j]
     ## Recolonize first D slots
-    for (j in 1:Ny)
+    for (j in 1:Ny) {
+        jup <- if (j == Ny) 1 else j + 1
+        jdown <- if (j == 1) Ny else j - 1
         for (i in 1:Nx) {
             ## Consider immigration
             imm <- rbinom(1, D, m)
             if (imm) {
+                ## select plant for yet unknown plot (first D dead)
+                iplant <- sample(J - D, imm, replace = TRUE) + D
+                iup <- if (i == Nx) 1 else i + 1
+                idown <- if (i == 1) Nx else i - 1
                 for (jim in seq_len(imm)) {
-                    ## select plant for yet unknown plot (first D dead)
-                    iplant <- sample(J - D, 1) + D
                     ## select neighbour plot with torus wrap-around
                     land[jim, i, j] <-
                         switch(sample(4, 1),
-                               land[iplant, i,  (j - 2) %% Ny + 1],
-                               land[iplant, i %% Nx + 1, j],
-                               land[iplant, i, j %% Ny + 1],
-                               land[iplant, (i - 2) %% Nx + 1, j]
+                               land[iplant[jim], i,  jup],
+                               land[iplant[jim], iup, j],
+                               land[iplant[jim], i, jdown],
+                               land[iplant[jim], idown, j]
                            )
                 }
             }
@@ -42,5 +46,6 @@
                 for (sp in which(evolved))
                     land[sp, i, j] <- mutate(land[sp, i, j])
         }
+    }
     land
 }
