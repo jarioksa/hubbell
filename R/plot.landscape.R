@@ -7,18 +7,18 @@
     op <- par(no.readonly = TRUE)
     layout(matrix(c(1, 1, 2, 1, 1, 2), 2, 3, byrow = TRUE))
     d <- dim(land)
-    nx <- d[1]
-    ny <- d[2]
-    J <- d[3]
+    nx <- d[2]
+    ny <- d[3]
+    J <- d[1]
     plot(1:nx, 1:ny, type="n", axes=FALSE, xlab="", ylab="")
     if (!missing(main))
         mtext(main)
     box()
     ijit <- jitter(rep(0,J))
     jjit <- jitter(rep(0,J))*100
-    for (i in 1:nx)
-        for (j in 1:ny) {
-            plt <- land[i,j,]
+    for (j in 1:ny)
+        for (i in 1:nx) {
+            plt <- land[,i,j]
             plt <- plt[plt != "#FFFFFF"]
             nplt <- length(plt)
             if (nplt) {

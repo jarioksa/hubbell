@@ -4,18 +4,18 @@
     function(land, D, m, theta)
 {
     tmp <- dim(land)
-    J <- tmp[3]
-    Nx <- tmp[1]
-    Ny <- tmp[2]
+    J <- tmp[1]
+    Nx <- tmp[2]
+    Ny <- tmp[3]
     JM <- J*Nx*Ny
     nu <- theta/2/JM
     ## Shuffle: prepare to kill first D
-    for (i in 1:Nx)
-        for (j in 1:Ny)
-            land[i,j,] <- land[i,j,sample(J)]
+    for (j in 1:Ny)
+        for (i in 1:Nx)
+            land[,i,j] <- land[sample(J), i, j]
     ## Recolonize first D slots
-    for (i in 1:Nx)
-        for (j in 1:Ny) {
+    for (j in 1:Ny)
+        for (i in 1:Nx) {
             ## Consider immigration
             imm <- rbinom(1, D, m)
             if (imm) {
@@ -24,23 +24,23 @@
                     i.step <- i - step
                     if (i.step < 1) i.step <- Nx
                     if (i.step > Nx) i.step <- 1
-                    pool <- c(pool, land[i.step, j, (D+1):J])
+                    pool <- c(pool, land[(D+1):J, i.step, j])
                     j.step <- j - step
                     if (j.step < 1) j.step <- Ny
                     if (j.step > Ny) j.step <- 1
-                    pool <- c(pool, land[i, j.step, (D+1):J])
+                    pool <- c(pool, land[(D+1):J, i, j.step])
                 }
-                land[i,j,1:imm] <- sample(pool, imm, replace=TRUE)
+                land[1:imm, i,j] <- sample(pool, imm, replace=TRUE)
             }
             ## Fill the rest from the local community
             if (imm < D)
-                land[i,j, (imm+1):D] <- sample(land[i,j,(D+1):J], D-imm,
+                land[(imm+1):D, i,j] <- sample(land[(D+1):J, i,j], D-imm,
                                                replace=TRUE)
             ## Mutate
             evolved <- runif(D) <= nu
             if (any(evolved))
                 for (sp in which(evolved))
-                    land[i,j,sp] <- mutate(land[i,j,sp])
+                    land[sp, i, j] <- mutate(land[sp, i, j])
         }
     land
 }
