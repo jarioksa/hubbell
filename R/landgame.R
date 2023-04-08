@@ -25,7 +25,7 @@
                 idown <- if (i == 1) Nx else i - 1
                 pick <- sample(4 * (J - D), imm, replace = TRUE)
                 itree <- (pick - 1) %% (J - D) + 1 + D
-                for(jim in seq_len(imm))l
+                for(jim in seq_len(imm))
                     land[jim, i, j] <-
                         switch((pick[jim] - 1) %/% (J - D) + 1,
                                land[itree[jim], i, jup],
