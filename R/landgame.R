@@ -8,7 +8,7 @@
     Nx <- tmp[2]
     Ny <- tmp[3]
     JM <- J*Nx*Ny
-    nu <- theta/2/JM
+    nu <- theta/2/JM    # probability of speciation
     ## Shuffle: prepare to kill first D
     for (j in 1:Ny)
         for (i in 1:Nx)
@@ -21,13 +21,17 @@
             ## Consider immigration
             imm <- rbinom(1, D, m)
             if (imm) {
-                ## select plant for yet unknown plot (first D dead)
                 iup <- if (i == Nx) 1 else i + 1
                 idown <- if (i == 1) Nx else i - 1
-                tree <- seq(D+1, J)
-                pool <- c(land[tree, i, jdown], land[tree, idown, j],
-                          land[tree, iup, j], land[tree, i, jup])
-                land[seq_len(imm), i, j] <- sample(pool, imm, replace = TRUE)
+                pick <- sample(4 * (J - D), imm, replace = TRUE)
+                itree <- (pick - 1) %% (J - D) + 1 + D
+                for(jim in seq_len(imm))l
+                    land[jim, i, j] <-
+                        switch((pick[jim] - 1) %/% (J - D) + 1,
+                               land[itree[jim], i, jup],
+                               land[itree[jim], iup, j],
+                               land[itree[jim], i, jdown],
+                               land[itree[jim], idown, j])
             }
             ## Fill the rest from the local community
             if (imm < D)
