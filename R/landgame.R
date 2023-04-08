@@ -22,19 +22,12 @@
             imm <- rbinom(1, D, m)
             if (imm) {
                 ## select plant for yet unknown plot (first D dead)
-                iplant <- sample(J - D, imm, replace = TRUE) + D
                 iup <- if (i == Nx) 1 else i + 1
                 idown <- if (i == 1) Nx else i - 1
-                for (jim in seq_len(imm)) {
-                    ## select neighbour plot with torus wrap-around
-                    land[jim, i, j] <-
-                        switch(sample(4, 1),
-                               land[iplant[jim], i,  jup],
-                               land[iplant[jim], iup, j],
-                               land[iplant[jim], i, jdown],
-                               land[iplant[jim], idown, j]
-                           )
-                }
+                tree <- seq(D+1, J)
+                pool <- c(land[tree, i, jdown], land[tree, idown, j],
+                          land[tree, iup, j], land[tree, i, jup])
+                land[seq_len(imm), i, j] <- sample(pool, imm, replace = TRUE)
             }
             ## Fill the rest from the local community
             if (imm < D)
