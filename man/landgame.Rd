@@ -15,9 +15,9 @@
 
 \usage{
 landgame(land, D, m, theta)
-makeland(nrow, ncol, J)
+makeland(J, nrow, ncol)
 mutate(genes)
-\method{plot}{landscape}(x,main, ...)
+\method{plot}{landscape}(x, main, ...)
 \method{as.matrix}{landscape}(x, ...)
 }
 
@@ -27,10 +27,9 @@ mutate(genes)
   \item{D}{Number of plants killed in a local community per timestep.}
   \item{m}{Probability of immigration from neighbouring local communities. }
   \item{theta}{Hubbell's fundamental biodiversity number \eqn{\theta}.}
-  \item{nrow}{Number of rows of local communities in a Metacommunity.}
-  \item{ncol}{Number of columns of local communities in a
-    Metacommunity.}
   \item{J}{Size of each local community.}
+  \item{nrow, ncol}{Number of rows and column in the grid of local
+    communities in a Metacommunity.}
   \item{genes}{Genes defining the species, as a hexidecimal RGB colour.}
   \item{main}{Main title for the plot.}
   \item{...}{Other parameters to the function.}
@@ -95,7 +94,7 @@ mutate(genes)
 \seealso{\code{\link{hubbell}}.}
 
 \examples{
-land <- makeland(21, 21, 16)
+land <- makeland(16, 21, 21)
 land
 op <- par(bg="gray")
 plot(land)
