@@ -16,10 +16,10 @@
          ...)
     box()
     rad <- rev(sort(table(x)))
-    plot(1:length(rad), rad, log = "y", type = "l", xlab = "Rank",
+    plot(seq_along(rad), as.vector(rad), log = "y", type = "l", xlab = "Rank",
          ylab = "Abundance", xlim = c(1, sp.max),
          ylim = c(1, length(x)), ...)
-    points(1:length(rad), rad, col = names(rad), pch=16, ...)
+    points(seq_along(rad), as.vector(rad), col = names(rad), pch=16, ...)
     par(ylog=op$ylog)
     invisible()
 }
