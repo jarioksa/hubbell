@@ -1,4 +1,4 @@
-#' @importFrom grDevices col2rgb
+#' @importFrom grDevices col2rgb rgb
 #' @importFrom stats runif
 #' @export
 `mutate` <-

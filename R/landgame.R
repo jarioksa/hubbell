@@ -1,4 +1,4 @@
-#' @importFrom stats rbinom
+#' @importFrom stats rbinom runif
 #' @export
 `landgame` <-
     function(land, D, m, theta)
